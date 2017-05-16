@@ -2,9 +2,20 @@
   page-section
 ==========================================================================*/
 
+$milk: #f8f6f4;
+
 .page-section {
   position: relative;
-  padding: em(119) 0;
+  padding: em(117) 0;
+}
+
+.page-section__title {
+  @include span(full);
+  margin: 0 0 em(10);
+  font-size: em(36);
+  @include playfairdisplay;
+  color: $text-color-dark;
+  text-align: center;
 }
 
 .page-section_cover {
@@ -19,4 +30,8 @@
     height: 100%;
     background-color: $cover-color;
   }
+}
+
+.page-section_milk {
+  background-color: $milk;
 }

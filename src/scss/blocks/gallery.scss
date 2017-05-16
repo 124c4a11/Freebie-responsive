@@ -1,0 +1,82 @@
+/*==========================================================================
+  gallery
+==========================================================================*/
+
+$transition: .8s;
+
+.gallery {
+  @include break;
+  @include clearfix;
+}
+
+.gallery__item {
+  margin: gutter()*2 0 0;
+}
+
+.gallery__item_sm {
+  @include span(4);
+  .gallery__item-img {
+    height: em(370);
+  }
+}
+
+.gallery__item_md {
+  @include span(8);
+
+  .gallery__item-img {
+    height: em(770);
+  }
+}
+
+.gallery__item_lg {
+  @include span(full);
+  .gallery__item-img {
+    height: em(780);
+  }
+}
+
+.gallery__item-inner {
+  overflow: hidden;
+}
+
+.gallery__item-link {
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $text-color-dark;
+  }
+}
+
+.gallery__item-img {
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: $transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $cover-color;
+      animation: fadeIn $transition;
+    }
+
+    &::after {
+      content: '+';
+      @include transform-center;
+      display: block;
+      font-size: em(60);
+      animation: fadeIn $transition;
+    }
+  }
+}

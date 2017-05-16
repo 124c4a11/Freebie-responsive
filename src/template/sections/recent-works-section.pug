@@ -1,0 +1,33 @@
+section.recent-works-section.page-section.page-section_milk
+  .container
+    h2.page-section__title
+      | Recent works
+    //gallery
+    .gallery
+      -
+        var works = [
+          {
+            imgSm: 'assets/img/recent-works/sm/sm-1.jpg',
+            imgLg: 'assets/img/recent-works/lg/lg-1.jpg',
+            sizeClass: 'gallery__item_md'
+          },{
+            imgSm: 'assets/img/recent-works/sm/sm-2.jpg',
+            imgLg: 'assets/img/recent-works/lg/lg-2.jpg',
+            sizeClass: 'gallery__item_sm'
+          },{
+            imgSm: 'assets/img/recent-works/sm/sm-3.jpg',
+            imgLg: 'assets/img/recent-works/lg/lg-3.jpg',
+            sizeClass: 'gallery__item_sm'
+          },{
+            imgSm: 'assets/img/recent-works/sm/sm-4.jpg',
+            imgLg: 'assets/img/recent-works/lg/lg-4.jpg',
+            sizeClass: 'gallery__item_lg'
+          }
+        ];
+
+      each work in works
+        .gallery__item(class= work.sizeClass)
+          .gallery__item-inner
+            a.gallery__item-link(href= work.imgLg)
+              .gallery__item-img(style=`background-image: url(${work.imgSm});`)
+    ///gallery
