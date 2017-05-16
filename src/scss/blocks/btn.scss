@@ -7,6 +7,7 @@ $text-color: $theme-color;
 
 .btn {
   @include inline-block;
+  max-width: 90%;
   padding: em(15) em(52);
   border: rem(2) solid $border-color;
   font-size: em(18);
@@ -24,5 +25,13 @@ $text-color: $theme-color;
   &:hover,
   &:active {
     color: $text-color;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: em(15);
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: em(10);
   }
 }
