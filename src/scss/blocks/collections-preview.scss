@@ -26,6 +26,16 @@
   height: 100%;
   padding: 0;
   overflow: hidden;
+
+  @media only screen and (max-width: 992px) {
+    position: static;
+    @include span(full);
+    height: em(460);
+  }
+
+  @media only screen and (max-width: 480px) {
+    height: em(200);
+  }
 }
 
 .collections-preview__item-img {
@@ -40,12 +50,28 @@
   @include push(6);
   padding: em(59) em(100) em(59) em(59);
   min-height: em(400);
+
+  @media only screen and (max-width: 992px) {
+    @include span(full);
+    @include push(0);
+    text-align: center;
+    padding: em(59) em(140) em(119);
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: em(59) em(59) em(80);
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: em(59) gutter();
+  }
 }
 
 .collections-preview__item-title {
   margin: 0 0 em(13);
   @include playfairdisplay;
   font-size: em(36);
+  color: $text-color-dark;
 }
 
 .collections-preview__item-description {

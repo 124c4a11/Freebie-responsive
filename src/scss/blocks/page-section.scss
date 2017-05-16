@@ -39,3 +39,9 @@ $milk: #f8f6f4;
 .page-section_milk {
   background-color: $milk;
 }
+
+.page-section_tablet-padding-bottom-none {
+  @media only screen and (max-width: 992px) {
+    padding-bottom: 0;
+  }
+}
