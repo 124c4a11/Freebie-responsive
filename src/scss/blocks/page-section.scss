@@ -7,6 +7,10 @@ $milk: #f8f6f4;
 .page-section {
   position: relative;
   padding: em(117) 0;
+
+  @media only screen and (max-width: 768px) {
+    padding: em(70) 0;
+  }
 }
 
 .page-section__title {
