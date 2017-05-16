@@ -1,0 +1,10 @@
+/*==========================================================================
+  Typography
+==========================================================================*/
+
+body {
+  @include lato;
+  font-size: $font-size-base;
+  color: $text-color-base;
+  -webkit-font-smoothing: antialiased;
+}

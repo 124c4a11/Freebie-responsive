@@ -1,0 +1,17 @@
+@mixin lato($weight: light) {
+  @if ($weight == light) {
+    font-weight: lighter;
+    font-family: 'latolight', sans-serif;
+  }
+
+  @if ($weight == bold) {
+    font-family: 'latobold', sans-serif;
+  }
+}
+
+
+@mixin playfairdisplay($weight: bold) {
+  @if ($weight == bold) {
+    font-family: 'playfair_displaybold', serif;
+  }
+}
