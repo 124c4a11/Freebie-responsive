@@ -8,7 +8,7 @@ $text-color: $theme-color;
 .btn {
   @include inline-block;
   max-width: 90%;
-  padding: em(15) em(52);
+  padding: em(15) em(46);
   border: rem(2) solid $border-color;
   font-size: em(18);
   @include lato(bold);
@@ -19,12 +19,18 @@ $text-color: $theme-color;
   text-decoration: none;
   background-color: transparent;
   outline: none;
+  cursor: pointer;
+  transition: .2s;
 
   &:link,
   &:visited,
-  &:hover,
   &:active {
     color: $text-color;
+  }
+
+  &:hover {
+    background-color: $theme-color;
+    color: #fff;
   }
 
   @media only screen and (max-width: 768px) {
@@ -34,4 +40,8 @@ $text-color: $theme-color;
   @media only screen and (max-width: 360px) {
     font-size: em(10);
   }
+}
+
+.btn_lg {
+  padding: em(15) em(52);
 }

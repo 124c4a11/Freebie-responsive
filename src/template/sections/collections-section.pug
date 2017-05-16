@@ -1,0 +1,29 @@
+.collections-section.page-section
+  .container
+    .collections-preview
+      -
+        var items = [
+          {
+            img: 'assets/img/collections-preview/1.jpg',
+            title: 'B&W Collection',
+            description: 'They were six beautiful children but the youngest was the prettiest of them all. Her skin was as clear and delicate as a rose-leaf and her eyes as blue as the deepest sea. But like all the others she had no feet and her body ended in a fish’s tail.'
+          },{
+            img: 'assets/img/collections-preview/2.jpg',
+            title: 'Mother Earth',
+            description: 'And racism will be dead, for variety will then be the great fact of Humanity, and not uniformity. Mother Earth will finally have given birth not to merely a Terrestrian, but to a Galactic Empire'
+          },{
+            img: 'assets/img/collections-preview/3.jpg',
+            title: 'Portraits',
+            description: "Yes, we went to school in the sea, though you mayn't believe it—' 'I never said I didn't!' interrupted Alice. 'You did,' said the Mock Turtle. 'Hold your tongue!' added the Gryphon, before Alice could speak again."
+          }
+        ];
+
+      each item in items
+        article.collections-preview__item
+          .collections-preview__item-img-wrapper
+            .collections-preview__item-img(style=`background-image: url(${item.img});`)
+          .collections-preview__item-text-wrapper
+            h3.collections-preview__item-title= item.title
+            .collections-preview__item-description
+              p= item.description
+            a.collections-preview__btn.btn(href="#") more

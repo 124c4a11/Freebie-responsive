@@ -18,6 +18,10 @@ $transition: .5s;
 
   .gallery__item-img {
     height: em(370);
+
+    @media only screen and (max-width: 768px) {
+      height: em(380);
+    }
   }
 
   @media only screen and (max-width: 992px) {
@@ -34,6 +38,10 @@ $transition: .5s;
 
   .gallery__item-img {
     height: em(770);
+
+    @media only screen and (max-width: 768px) {
+      height: em(380);
+    }
   }
 
   @media only screen and (max-width: 992px) {
@@ -46,6 +54,10 @@ $transition: .5s;
 
   .gallery__item-img {
     height: em(780);
+
+    @media only screen and (max-width: 768px) {
+      height: em(380);
+    }
   }
 }
 
@@ -93,9 +105,5 @@ $transition: .5s;
       font-size: em(60);
       animation: fadeIn $transition;
     }
-  }
-
-  @media only screen and (max-width: 768px) {
-    height: em(380) !important;
   }
 }
