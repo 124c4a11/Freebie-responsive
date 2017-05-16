@@ -1,0 +1,28 @@
+/*==========================================================================
+  btn
+==========================================================================*/
+
+$border-color: $theme-color;
+$text-color: $theme-color;
+
+.btn {
+  @include inline-block;
+  padding: em(15) em(52);
+  border: rem(2) solid $border-color;
+  font-size: em(18);
+  @include lato(bold);
+  color: $text-color;
+  letter-spacing: em(1.5);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $text-color;
+  }
+}

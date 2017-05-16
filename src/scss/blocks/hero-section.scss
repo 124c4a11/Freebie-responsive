@@ -1,0 +1,29 @@
+/*==========================================================================
+  hero-section
+==========================================================================*/
+
+.hero-section {
+  min-height: 100vh;
+  background: fixed url(../img/hero-section/hero-bg.jpg) 50% 35% no-repeat;
+  background-size: cover;
+}
+
+.hero-section__content {
+  @include transform-center;
+  padding: em(120) gutter();
+  text-align: center;
+}
+
+.hero-section__title {
+  margin-top: 0;
+  margin-bottom: em(6.5);
+  font-size: em(60);
+  @include playfairdisplay;
+  color: $theme-color;
+}
+
+.hero-section__subtitle {
+  margin: 0 0 em(79);
+  font-size: em(24);
+  letter-spacing: em(1.5);
+}
