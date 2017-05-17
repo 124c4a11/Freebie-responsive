@@ -1,0 +1,71 @@
+/*==========================================================================
+  hamburger
+==========================================================================*/
+
+$hamburger-width: 30px;
+$hamburger-height: 41px;
+$hamburger-padding: 0;
+$hamburger-bg: none;
+
+$items-width: 100%;
+$items-height: 2px;
+$items-space: 8px;
+$items-bg-color: $text-color-dark;
+$open-items-bg-color: $items-bg-color;
+
+$duration: .25s;
+$timing-func: linear;
+
+.hamburger {
+  position: relative;
+  @include inline-block();
+  width: $hamburger-width;
+  height: $hamburger-height;
+  padding: $hamburger-padding;
+  border: 0 none;
+  overflow: hidden;
+  background: $hamburger-bg;
+  outline: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    @include absolute-center;
+    display: block;
+    height: $items-height;
+    width: $items-width;
+    background-color: $items-bg-color;
+    transform: rotate(0);
+    transition: top $duration $timing-func $duration, transform $duration $timing-func 0s;
+  }
+
+  &::before {
+    top: $items-space;
+  }
+
+  &::after {
+    top: -$items-space;
+  }
+}
+
+
+/*==========================================================================
+  hamburger_open
+==========================================================================*/
+
+.hamburger_close {
+  &::before,
+  &::after {
+    top: 0px;
+    transition: top $duration $timing-func 0s, transform $duration $timing-func $duration;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
