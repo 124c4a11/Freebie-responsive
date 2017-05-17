@@ -10,10 +10,20 @@
   @include span(4);
   @include push(4);
   margin-bottom: em(55);
+
+  @media only screen and (max-width: 768px) {
+    @include span(full);
+    @include push(0);
+  }
 }
 
 .contacts-section__socials {
   @include span(4);
   @include push(4);
   text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    @include span(full);
+    @include push(0);
+  }
 }
