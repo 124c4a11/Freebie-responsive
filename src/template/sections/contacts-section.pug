@@ -1,0 +1,45 @@
+.contacts-section.page-section
+  .container
+    h2.contacts-section__title.page-section__title Get in touch
+    //feedback
+    .contacts-section__feedback.feedback
+      form.feedback__form
+        .feedback__group
+          input.field(type="text" name="name" placeholder="Your Name")
+        .feedback__group
+          input.field(type="email" name="email" placeholder="Email")
+        .feedback__group
+          textarea.field.feedback__textarea(name="message" placeholder="Message")
+        .feedback__controls
+          button.feedback__btn.btn(type="submit") Send
+      ///feedback
+    .contacts-section__socials.socials
+      .socials__title Follow me on:
+      ul.socials__list
+        -
+          var items = [
+            {
+              name: 'behance',
+              abbr: 'be',
+              icon: 'assets/img/sprite.svg#behance'
+            },{
+              name: 'facebook',
+              abbr: 'fb',
+              icon: 'assets/img/sprite.svg#facebook-f'
+            },{
+              name: 'twitter',
+              abbr: 'tw',
+              icon: 'assets/img/sprite.svg#twitter'
+            },{
+              name: 'instagram',
+              abbr: 'inst',
+              icon: 'assets/img/sprite.svg#instagram'
+            },
+          ];
+
+        each item in items
+          li.socials__item
+            a.socials__item-link(href="#")
+              svg.socials__item-icon(class=`socials__item-icon_${item.abbr}`)
+                use(xlink:href= item.icon)
+              .socials__item-text= item.name

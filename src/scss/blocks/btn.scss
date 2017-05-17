@@ -7,7 +7,6 @@ $text-color: $theme-color;
 
 .btn {
   @include inline-block;
-  max-width: 90%;
   padding: em(15) em(46);
   border: rem(2) solid $border-color;
   font-size: em(18);

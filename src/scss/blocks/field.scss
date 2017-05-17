@@ -1,0 +1,15 @@
+/*==========================================================================
+  field
+==========================================================================*/
+
+$border-color: #6c6a68;
+$placeholder-color: #a8a6a4;
+
+.field {
+  width: 100%;
+  padding: em(18) rem(20);
+  border: rem(1) solid $border-color;
+  resize: none;
+  outline: none;
+  @include placeholderColor($placeholder-color);
+}
