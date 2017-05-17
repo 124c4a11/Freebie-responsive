@@ -2,6 +2,10 @@
   main-menu
 ==========================================================================*/
 
+$mobile-menu-bg: rgba($cover-color, .95);
+$mobile-menu-text-color-active: #fff;
+$mobile-menu-item-bg-color-active: $theme-color;
+
 .main-menu__toggle {
   display: none;
 
@@ -51,6 +55,7 @@
 .main-menu__link {
   line-height: em(38);
   text-decoration: none;
+  transition: .25s;
 
   &:link,
   &:visited {
@@ -60,5 +65,62 @@
   &:hover,
   &:active {
     color: $text-color-dark;
+  }
+}
+
+/*==========================================================================
+  main-menu_open
+==========================================================================*/
+
+.main-menu_open {
+
+  .main-menu__nav {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    background-color: $mobile-menu-bg;
+
+    &::before {
+      content: '';
+      @include inline-block(middle);
+      height: 100%;
+    }
+  }
+
+  .main-menu__list {
+    @include inline-block(middle);
+    width: 100%;
+    animation: fadeInUp .35s;
+  }
+
+  .main-menu__item {
+    display: block;
+    margin-right: 0;
+    border-radius: 0;
+    font-size: rem(16);
+  }
+
+  .main-menu__item_active {
+    .main-menu__link {
+      background-color: $mobile-menu-item-bg-color-active;
+      &:link,
+      &:visited {
+        color: $mobile-menu-text-color-active;
+      }
+    }
+  }
+
+  .main-menu__link {
+    display: block;
+    padding: rem(20);
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+      color: $mobile-menu-text-color-active;
+      background-color: $mobile-menu-item-bg-color-active;
+    }
   }
 }
