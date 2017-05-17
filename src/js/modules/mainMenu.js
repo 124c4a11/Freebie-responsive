@@ -1,16 +1,18 @@
 'use strict';
 
+import pageNavigation from './pageNavigation';
+
 var
-  $mainMenu = $('.main-menu'),
-  $mainMenuToggle = $mainMenu.find('.main-menu__toggle'),
-  $mainMenuNav = $mainMenu.find('.main-menu__nav');
+  $menu = $('.main-menu'),
+  $menuToggle = $menu.find('.main-menu__toggle'),
+  $menuNav = $menu.find('.main-menu__nav');
 
 
 function init() {
-  $mainMenuToggle.on('click', function(e) {
+  $menuToggle.on('click', function(e) {
     e.preventDefault();
 
-    if ($mainMenu.hasClass('main-menu_open')) {
+    if ($menu.hasClass('main-menu_open')) {
       close();
     } else {
       open();
@@ -18,22 +20,38 @@ function init() {
   });
 
   $('.main-menu__item').on('click', function(e) {
-    if ($mainMenu.hasClass('main-menu_open')) close();
+    var
+      $menuItem = $(this),
+      $menuLink = $menuItem.find('.main-menu__link');
+
+    if (!$menuItem.hasClass('main-menu__item_active')) {
+      $menuItem
+        .addClass('main-menu__item_active')
+        .siblings()
+          .removeClass('main-menu__item_active');
+    }
+
+    if ($menu.hasClass('main-menu_open')) close();
+
+    pageNavigation.scrollToTarget($menuLink.attr('href'));
   });
 }
 
+
 function open() {
-  $mainMenuToggle.addClass('hamburger_close');
-  $mainMenu.addClass('main-menu_open');
+  $menuToggle.addClass('hamburger_close');
+  $menu.addClass('main-menu_open');
 }
+
 
 function close() {
-  $mainMenu.removeClass('main-menu_open');
-  $mainMenuToggle.removeClass('hamburger_close');
+  $menu.removeClass('main-menu_open');
+  $menuToggle.removeClass('hamburger_close');
 }
 
+
 function onResize(windowWidth) {
-  if (windowWidth > 992 && $mainMenu.hasClass('main-menu_open')) {
+  if (windowWidth > 992 && $menu.hasClass('main-menu_open')) {
     close();
   }
 }

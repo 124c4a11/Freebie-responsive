@@ -13,20 +13,23 @@ header.page-header
             var items = [
               {
                 name: 'Home',
+                target: '#hero-section'
               },{
                 name: 'Gallery',
+                target: '#recent-works-section'
               },{
                 name: 'Contact',
+                target: '#contacts-section'
               }
             ];
 
           each item, ndx in items
             if ndx == 0
               li.main-menu__item.main-menu__item_active
-                a.main-menu__link(href="#")= item.name
+                a.main-menu__link(href= item.target)= item.name
             else
               li.main-menu__item
-                a.main-menu__link(href="#")= item.name
+                a.main-menu__link(href= item.target)= item.name
     ///main-menu
     .page-header__socials.socials
       ul.socials__list.socials__list_semitransparent
@@ -53,7 +56,7 @@ header.page-header
 
         each item in items
           li.socials__item
-            a.socials__item-link(href="#")
+            a.socials__item-link(href= item.target)
               svg.socials__item-icon(class=`socials__item-icon_${item.abbr}`)
                 use(xlink:href= item.icon)
               .socials__item-text= item.name
