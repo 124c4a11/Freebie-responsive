@@ -20,10 +20,23 @@
   .logo__link {
     line-height: em(48);
   }
+
+  @media only screen and (max-width: 992px) {
+    @include span(6);
+    @include push(0);
+    text-align: left;
+  }
 }
 
 .page-header__main-menu {
+  @include span(5);
   @include pull(7);
+
+  @media only screen and (max-width: 992px) {
+    @include span(6);
+    @include pull(0);
+    text-align: right;
+  }
 }
 
 .page-header__socials {
@@ -31,4 +44,8 @@
   padding-right: 0;
   margin-right: em(-80);
   text-align: right;
+
+  @media only screen and (max-width: 992px) {
+    display: none;
+  }
 }
