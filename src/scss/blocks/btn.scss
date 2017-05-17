@@ -1,0 +1,46 @@
+/*==========================================================================
+  btn
+==========================================================================*/
+
+$border-color: $theme-color;
+$text-color: $theme-color;
+
+.btn {
+  @include inline-block;
+  padding: em(15) em(46);
+  border: rem(2) solid $border-color;
+  font-size: em(18);
+  @include lato(bold);
+  color: $text-color;
+  letter-spacing: em(1.5);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $text-color;
+  }
+
+  &:hover {
+    background-color: $theme-color;
+    color: #fff;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: em(15);
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: em(10);
+  }
+}
+
+.btn_lg {
+  padding: em(15) em(52);
+}
