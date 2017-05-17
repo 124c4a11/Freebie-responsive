@@ -1,0 +1,16 @@
+/*==========================================================================
+  logo
+==========================================================================*/
+
+.logo__link {
+  @include inline-block;
+  overflow: hidden;
+}
+
+.logo__img {
+  display: block;
+}
+
+.logo__text {
+  @include absolute-hidden;
+}

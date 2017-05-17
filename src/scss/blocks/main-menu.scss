@@ -1,0 +1,68 @@
+/*==========================================================================
+  main-menu
+==========================================================================*/
+
+.main-menu {
+  @include span(5);
+}
+
+.main-menu__toggle {
+  display: none;
+
+  @media only screen and (max-width: 992px) {
+    position: relative;
+    z-index: 9999;
+    @include inline-block;
+  }
+}
+
+.main-menu__nav {
+  @media only screen and (max-width: 992px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    overflow: auto;
+    /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+    -webkit-overflow-scrolling: touch;
+    font-size: 0;
+  }
+}
+
+.main-menu__list {
+  @include list-unstyled;
+}
+
+.main-menu__item {
+  @include inline-block;
+  margin-right: em(27);
+  @include lato(bold);
+}
+
+.main-menu__item_active {
+  .main-menu__link {
+    &:link,
+    &:visited {
+      color: $text-color-dark;
+    }
+  }
+}
+
+.main-menu__link {
+  line-height: em(38);
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $text-color-base;
+  }
+
+  &:hover,
+  &:active {
+    color: $text-color-dark;
+  }
+}

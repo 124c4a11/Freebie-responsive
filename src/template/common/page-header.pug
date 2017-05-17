@@ -1,0 +1,59 @@
+header.page-header
+  .container
+    .page-header__logo.logo
+      a.logo__link(href="/")
+        img.logo__img(src="assets/img/logo.png" alt="freebie")
+        span.logo__text Freebie
+    //main-menu
+    .page-header__main-menu.main-menu
+      button.main-menu__toggle.hamburger(type="button")
+      nav.main-menu__nav
+        ul.main-menu__list
+          -
+            var items = [
+              {
+                name: 'Home',
+              },{
+                name: 'Gallery',
+              },{
+                name: 'Contact',
+              }
+            ];
+
+          each item, ndx in items
+            if ndx == 0
+              li.main-menu__item.main-menu__item_active
+                a.main-menu__link(href="#")= item.name
+            else
+              li.main-menu__item
+                a.main-menu__link(href="#")= item.name
+    ///main-menu
+    .page-header__socials.socials
+      ul.socials__list.socials__list_semitransparent
+        -
+          var items = [
+            {
+              name: 'behance',
+              abbr: 'be',
+              icon: 'assets/img/sprite.svg#behance'
+            },{
+              name: 'facebook',
+              abbr: 'fb',
+              icon: 'assets/img/sprite.svg#facebook-f'
+            },{
+              name: 'twitter',
+              abbr: 'tw',
+              icon: 'assets/img/sprite.svg#twitter'
+            },{
+              name: 'instagram',
+              abbr: 'inst',
+              icon: 'assets/img/sprite.svg#instagram'
+            },
+          ];
+
+        each item in items
+          li.socials__item
+            a.socials__item-link(href="#")
+              svg.socials__item-icon(class=`socials__item-icon_${item.abbr}`)
+                use(xlink:href= item.icon)
+              .socials__item-text= item.name
