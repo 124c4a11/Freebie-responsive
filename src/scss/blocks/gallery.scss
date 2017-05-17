@@ -2,7 +2,7 @@
   gallery
 ==========================================================================*/
 
-$transition: .5s;
+$transition: .3s;
 
 .gallery {
   @include break;
@@ -81,10 +81,10 @@ $transition: .5s;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform 1s;
 
   &:hover {
     transform: scale(1.1);
-    transition: $transition;
 
     &::before {
       content: '';
