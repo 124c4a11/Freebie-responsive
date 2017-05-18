@@ -75,4 +75,5 @@ $transition: .3s;
   top: 0;
   background-color: $fixed-page-header-bg;
   box-shadow: 0 em(1) em(20) $shadow-color;
+  transition: top .4s;
 }
