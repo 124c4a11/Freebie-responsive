@@ -4,9 +4,9 @@
 
 $shadow-color: rgba(0, 0, 0, .1);
 
-$page-header-height: ;
 $page-header-bg: transparent;
 
+$fixed-page-header-height: em(64);
 $fixed-page-header-bg: rgba(255, 255, 255, .95);
 
 $transition: .3s;
@@ -66,14 +66,13 @@ $transition: .3s;
 
 .page-header_fixed {
   position: fixed;
-  top: em(-64);
-  transition: transform $transition;
+  top: -$fixed-page-header-height;
   padding-top: em(10);
   padding-bottom: em(10);
 }
 
 .page-header_fixed-visible {
-  transform: translate3d(0, 100%, 0);
+  top: 0;
   background-color: $fixed-page-header-bg;
   box-shadow: 0 em(1) em(20) $shadow-color;
 }

@@ -8,8 +8,6 @@ var
   previousTop = 0;
 
 function onScroll(currentTop) {
-  console.log(pageHeaderHeight);
-
   if (currentTop < previousTop) {
 
     // if scrolling up...
