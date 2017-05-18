@@ -41,12 +41,14 @@ function init() {
 function open() {
   $menuToggle.addClass('hamburger_close');
   $menu.addClass('main-menu_open');
+  $('html, body').css('overflow', 'hidden');
 }
 
 
 function close() {
   $menu.removeClass('main-menu_open');
   $menuToggle.removeClass('hamburger_close');
+  $('html, body').css('overflow', '')
 }
 
 
