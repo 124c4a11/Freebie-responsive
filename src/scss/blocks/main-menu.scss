@@ -6,6 +6,8 @@ $mobile-menu-bg: rgba($cover-color, .95);
 $mobile-menu-text-color-active: #fff;
 $mobile-menu-item-bg-color-active: $theme-color;
 
+$duration: .5s;
+
 .main-menu__toggle {
   display: none;
 
@@ -76,6 +78,7 @@ $mobile-menu-item-bg-color-active: $theme-color;
     overflow: auto;
     /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
     -webkit-overflow-scrolling: touch;
+    animation: fadeIn $duration;
 
     &::before {
       content: '';
@@ -87,7 +90,7 @@ $mobile-menu-item-bg-color-active: $theme-color;
   .main-menu__list {
     @include inline-block(middle);
     width: 100%;
-    animation: fadeInUp .35s;
+    animation: fadeInUp $duration;
   }
 
   .main-menu__item {
