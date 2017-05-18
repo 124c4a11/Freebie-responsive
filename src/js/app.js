@@ -36,7 +36,7 @@ $(window).on('scroll', function() {
     windowScrollTop = $(this).scrollTop();
 
   if ($('.page-section').length) {
-    pageNavigation.checkSection(windowScrollTop);
+    pageNavigation.checkSection();
   }
 
   if ($('.page-header').length) {
