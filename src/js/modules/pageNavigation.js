@@ -16,13 +16,12 @@ function scrollToTarget(id) {
 }
 
 
-function checkSection() {
-  $('.page-section').each(function() {
+function checkSection(scrollTop) {
+  $('.page-section').each(function(windowScrollTop) {
     var
       $section = $(this),
       topEdge = $section.offset().top - 400,
-      bottomEdge = topEdge + $section.height(),
-      windowScrollTop = $(window).scrollTop();
+      bottomEdge = topEdge + $section.height();
 
     if(topEdge < windowScrollTop && bottomEdge > windowScrollTop) {
       var
