@@ -58,6 +58,7 @@ function onResize(windowWidth) {
   }
 }
 
+
 export default {
   init: init,
   open: open,
