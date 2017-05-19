@@ -7,6 +7,7 @@ var
   pageHeaderHeight = $pageHeader.height(),
   previousTop = 0;
 
+
 function onScroll(currentTop) {
   if (currentTop < previousTop) {
 
@@ -30,6 +31,7 @@ function onScroll(currentTop) {
 
   previousTop = currentTop;
 }
+
 
 export default {
   onScroll: onScroll

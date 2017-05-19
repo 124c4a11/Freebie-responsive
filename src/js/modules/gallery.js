@@ -1,11 +1,11 @@
 'use strict';
 
-
 import magnificPopup from '../vendor/jquery.magnific-popup.js';
 
 var
   $gallery = {},
   $galleryItems = {};
+
 
 function init($container) {
   $gallery = $container;
@@ -21,6 +21,7 @@ function init($container) {
     });
   }
 }
+
 
 export default {
   init: init

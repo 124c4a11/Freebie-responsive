@@ -4,6 +4,7 @@ import mainMenu from './modules/mainMenu';
 import gallery from './modules/gallery';
 import pageNavigation from './modules/pageNavigation';
 import pageHeader from './modules/pageHeader';
+import preloader from './modules/preloader';
 
 $(document).ready(function() {
   if ($('.main-menu').length) {
@@ -16,6 +17,13 @@ $(document).ready(function() {
 
   if ($('.page-section').length) {
     pageNavigation.checkSection();
+  }
+});
+
+
+$(window).on('load', function() {
+  if ($('.preloader').length) {
+    preloader.init();
   }
 });
 
