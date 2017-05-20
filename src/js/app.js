@@ -39,9 +39,9 @@ $(window).on('resize', function() {
 });
 
 
-$(window).scroll(function() {
+$(window).on('scroll', function() {
   var
-    windowScrollTop = $(this).scrollTop();
+    windowScrollTop = $(document).scrollTop();
 
   if ($('.page-section').length) {
     pageNavigation.checkSection();
