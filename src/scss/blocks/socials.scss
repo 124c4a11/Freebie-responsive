@@ -35,6 +35,7 @@ $icon-color: $text-color-dark;
   display: block;
   width: em(28);
   height: em(28);
+  cursor: pointer;
 
   &:hover {
     .socials__item-icon {
