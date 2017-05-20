@@ -9,7 +9,7 @@ var
 
 
 function onScroll(currentTop) {
-  if (currentTop < previousTop) {
+  if (currentTop <= previousTop) {
 
     // if scrolling up...
     if (currentTop > 0 && $pageHeader.hasClass('page-header_fixed')) {

@@ -16,7 +16,7 @@ function scrollToTarget(id) {
 }
 
 
-function checkSection(scrollTop) {
+function checkSection() {
   $('.page-section').each(function() {
     var
       $section = $(this),
