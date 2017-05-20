@@ -10,7 +10,7 @@ function scrollToTarget(id) {
     $target = $('[data-target="' + direction + '"]'),
     targetPos = $target.offset().top;
 
-  $('body', 'html').animate({
+  $('body, html').animate({
     scrollTop: targetPos
   }, duration);
 }
