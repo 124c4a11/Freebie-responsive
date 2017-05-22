@@ -4,15 +4,19 @@ var
   duration = 1000;
 
 
-function scrollToTarget(id) {
+function scrollToTarget(targetHash, isAnimate) {
   var
-    direction = id.replace(/#/, ''),
-    $target = $('[data-target="' + direction + '"]'),
+    direction = targetHash.replace(/#/, ''),
+    $target = $('[data-elem="' + direction + '"]'),
     targetPos = $target.offset().top;
 
-  $('body, html').animate({
-    scrollTop: targetPos
-  }, duration);
+  if (isAnimate) {
+    $('body, html').animate({
+      scrollTop: targetPos
+    }, duration);
+  } else {
+    $('body, html').scrollTop(targetPos);
+  }
 }
 
 
@@ -26,14 +30,16 @@ function checkSection() {
 
     if(topEdge < windowScrollTop && bottomEdge > windowScrollTop) {
       var
-        currentId = $section.data('target'),
-        reqLink = $('.main-menu__link').filter('[href="#' + currentId + '"]');
+        currentId = $section.data('elem'),
+        $requiredLink = $('.main-menu__link').filter('[href="#' + currentId + '"]');
 
-      reqLink
+      $requiredLink
         .closest('.main-menu__item')
         .addClass('main-menu__item_active')
           .siblings()
             .removeClass('main-menu__item_active');
+
+      window.location.hash = currentId;
     }
   });
 }

@@ -26,7 +26,7 @@ function init() {
 
     if ($menu.hasClass('main-menu_open')) close();
 
-    pageNavigation.scrollToTarget($menuLink.attr('href'));
+    pageNavigation.scrollToTarget($menuLink.attr('href'), true);
   });
 }
 
