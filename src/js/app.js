@@ -16,6 +16,7 @@ $(document).ready(function() {
   }
 
   if ($('.page-section').length) {
+    pageNavigation.checkSection();
     pageNavigation.scrollToTarget(window.location.hash);
   }
 });
