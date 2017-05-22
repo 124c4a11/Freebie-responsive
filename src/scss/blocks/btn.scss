@@ -35,10 +35,6 @@ $text-color: $theme-color;
   @media only screen and (max-width: 768px) {
     font-size: em(15);
   }
-
-  @media only screen and (max-width: 360px) {
-    font-size: em(10);
-  }
 }
 
 .btn_lg {
