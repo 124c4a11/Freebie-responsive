@@ -24,13 +24,6 @@ function init() {
       $menuItem = $(this),
       $menuLink = $menuItem.find('.main-menu__link');
 
-    if (!$menuItem.hasClass('main-menu__item_active')) {
-      $menuItem
-        .addClass('main-menu__item_active')
-        .siblings()
-          .removeClass('main-menu__item_active');
-    }
-
     if ($menu.hasClass('main-menu_open')) close();
 
     pageNavigation.scrollToTarget($menuLink.attr('href'));
