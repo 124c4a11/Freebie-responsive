@@ -6,7 +6,11 @@ var
 
 function scrollToTarget(targetHash, isAnimate) {
   var
-    direction = targetHash.replace(/#/, ''),
+    direction = targetHash.replace(/#/, '');
+
+  if (!direction) return;
+
+  var
     $target = $('[data-elem="' + direction + '"]'),
     targetPos = $target.offset().top;
 
@@ -36,8 +40,8 @@ function checkSection() {
       $requiredLink
         .closest('.main-menu__item')
         .addClass('main-menu__item_active')
-          .siblings()
-            .removeClass('main-menu__item_active');
+        .siblings()
+          .removeClass('main-menu__item_active');
 
       window.location.hash = currentId;
     }

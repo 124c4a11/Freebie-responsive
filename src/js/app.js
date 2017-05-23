@@ -17,7 +17,6 @@ $(document).ready(function() {
 
   if ($('.page-section').length) {
     pageNavigation.scrollToTarget(window.location.hash);
-    pageNavigation.checkSection();
   }
 });
 
