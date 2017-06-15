@@ -24,6 +24,8 @@ function scrollToTarget(targetHash, isAnimate) {
 }
 
 
+var prevId = '';
+
 function checkSection() {
   $('.page-section').each(function() {
     var
@@ -37,13 +39,19 @@ function checkSection() {
         currentId = $section.data('elem'),
         $requiredLink = $('.main-menu__link').filter('[href="#' + currentId + '"]');
 
+      if (currentId === prevId) return
+
       $requiredLink
         .closest('.main-menu__item')
         .addClass('main-menu__item_active')
         .siblings()
           .removeClass('main-menu__item_active');
 
-      window.location.hash = currentId;
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, '#' + currentId);
+      } else {
+        window.location.hash = currentId;
+      }
     }
   });
 }
