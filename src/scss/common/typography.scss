@@ -4,7 +4,7 @@
 
 body {
   @include lato;
-  font-size: $font-size-base;
+  font-size: $font-size-base + px;
   color: $text-color-base;
   -webkit-font-smoothing: antialiased;
 }
