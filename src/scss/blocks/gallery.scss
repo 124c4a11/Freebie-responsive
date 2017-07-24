@@ -2,7 +2,9 @@
   gallery
 ==========================================================================*/
 
-$transition: .3s;
+$transition: .5s;
+$link-text-color: $text-color-light;
+$img-cover-color: rgba(0, 0, 0, .4);
 
 .gallery {
   @include break;
@@ -72,7 +74,7 @@ $transition: .3s;
   &:visited,
   &:hover,
   &:active {
-    color: $text-color-dark;
+    color: $link-text-color;
   }
 }
 
@@ -94,7 +96,7 @@ $transition: .3s;
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    background-color: $cover-color;
+    background-color: $img-cover-color;
     transition: opacity .3s 0s, visibility 0s .3s;
   }
 
