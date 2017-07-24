@@ -40,3 +40,8 @@ $text-color: $theme-color;
 .btn_lg {
   padding: em(15) em(52);
 }
+
+.btn_block {
+  display: block;
+  width: 100%;
+}
